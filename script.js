@@ -24,12 +24,17 @@ function updateText(){
  */
 function makeBold(elem){
   //CODE GOES HERE
+  elem.classList.toggle('active');
+  document.getElementById('text-output').classList.toggle('bold');
 }
 
 /**
  * Toggle the italic class for the output text
  */
 function makeItalic(elem){
+  elem.classList.toggle('active');
+  document.getElementById('text-output').classList.toggle('italic');
+
 }
 
 /**
@@ -39,7 +44,15 @@ function makeItalic(elem){
  * HINT: Use contains, remove, and add functions
  */
 function makeUnderline(elem){
-    //CODE GOES HERE
+    
+    if (elem.classList.contains('active')) {
+      elem.classList.remove('active'); 
+      document.getElementById('text-output').classList.remove('underline');
+    } else {
+      elem.classList.add('active');
+      document.getElementById('text-output').classList.add('underline');
+    }
+    
 }
 
 /**

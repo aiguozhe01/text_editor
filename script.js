@@ -62,5 +62,37 @@ function makeUnderline(elem){
  * HINT: Make sure to untoggle the active state for all other align buttons
  */
 function alignText(elem, alignType){
-  // CODE GOES HERE
+
+  /**
+  let left_button = document.getElementById('left-align');
+  let center_button = document.getElementById('center-align');
+  let right_button = document.getElementById('right-align');
+
+  left_button.classList.remove('active');
+  center_button.classList.remove('active');
+  right_button.classList.remove('active');
+  */
+ 
+  let buttonsList = document.getElementsByClassName('align');
+  for (let i = 0; i < buttonsList.length; i++){
+    buttonsList[i].classList.remove('active')
+  }
+
+  elem.classList.toggle('active');
+
+
+  // if (left_button.classList.contains('active')){
+  //   center_button.classList.remove('active');
+  //   right_button.classList.remove('active');
+  // } 
+  // else if (center_button.classList.contains('active')) {
+  //   left_button.classList.remove('active');
+  //   right_button.classList.remove('active'); 
+  // }
+  // else if (right_button.classList.contains('active')) {
+  //   left_button.classList.remove('active');
+  //   center_button.classList.remove('active');
+  // }
+
+  document.getElementById('text-output').style.textAlign = alignType;
 }
